@@ -128,40 +128,37 @@ exports.deleteImg = async (req, res) => {
     }
 }
 
-exports.uploadImg = async (req, res) => {
-    try {
-        const id = parseInt(req.params.id)
-        var file = req.files
-        var propertyArray = []
+// exports.uploadImg = async (req, res) => {
+//     try {
+//         const id = parseInt(req.params.id)
+//         var file = req.files
+//         var propertyArray = []
+//         file.map((fileName) => {
+//             var temp = {
+//                 "prop_id": id,
+//                 "property_img": fileName.path
+//             }
+//             propertyArray.push(temp)
+//         })
+//         var upload_img = await PropertyIMG.bulkCreate(propertyArray)
+//         if (upload_img) {
+//             return res.status(200).json({
+//                 message: "Image upload success"
+//             })
+//         }
 
-        file.map((fileName) => {
-            var temp = {
-                "prop_id": id,
-                "property_img": fileName.path
-            }
-            propertyArray.push(temp)
-        })
-        var upload_img = await PropertyIMG.bulkCreate(propertyArray)
-
-
-        if (upload_img) {
-            return res.status(200).json({
-                message: "Image upload success"
-            })
-        }
-
-        else {
-            return res.status(400).json({
-                message: "failed to upload"
-            })
-        }
-    } catch (error) {
-        res.status(500).json({
-            message: "Server Error",
-            error
-        })
-    }
-}
+//         else {
+//             return res.status(400).json({
+//                 message: "failed to upload"
+//             })
+//         }
+//     } catch (error) {
+//         res.status(500).json({
+//             message: "Server Error",
+//             error
+//         })
+//     }
+// }
 
 exports.getPropertyImg = async (req, res) => {
     try {
@@ -256,5 +253,20 @@ exports.addPropImg = async (req, res) => {
         })
     }
 }
+
+exports.uploadBrocher = async (req, res) => {
+    try {
+        const id = parseInt(req.params.id)
+        var file = req.file
+        console.log("id", id)
+        console.log("file", file)
+    } catch (error) {
+        res.status(500).json({
+            message: "Server Error",
+            error
+        })
+    }
+}
+
 
 

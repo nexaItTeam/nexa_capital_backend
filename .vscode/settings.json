@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/267525d3-9e38-4c1d-b271-d00b4c5586b2/resourceGroups/WelkinsCapital-Dev/providers/Microsoft.Web/sites/wellkin-backend-dev",
+    "appService.deploySubpath": "build"
+}

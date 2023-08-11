@@ -1,7 +1,7 @@
 const { S3 } = require('aws-sdk')
+const generateUniqueId = require('generate-unique-id');
 
 exports.imageUpload = async (file) => {
-    console.log("file",file)
     const s3 = new S3()
     const params = {
         Bucket: process.env.BUCKET_NAME,
@@ -22,4 +22,11 @@ exports.imageUpload = async (file) => {
     //     }
     // })
     // return Promise.all(params.map(param => s3.upload(param).promise()))
+}
+
+exports.brocherUpload = async (file) => {
+    const s3 = new S3()
+    const params = {
+
+    }
 }
